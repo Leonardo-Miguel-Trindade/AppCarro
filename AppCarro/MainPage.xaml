@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCarro.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            >
+
+            <!-- Título do aplicativo -->
+            <Label
+                Text="Bem-vindo ao AppCarro!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <!-- Entrada do preço do litro do Álcool (R$) -->
+            <Label Text="Preço do litro do Álcool (R$)" />
+            <Entry
+                x:Name="EntryPrecoAlcool"
+                Placeholder="0.00"
+                Keyboard="Numeric"/>
+
+            <!-- Entrada do preço do litro da Gasolina (R$) -->
+            <Label Text="Preço do litro da Gasolina (R$)" />
+            <Entry
+                x:Name="EntryPrecoGasolina"
+                Placeholder="0.00"
+                Keyboard="Numeric"/>
+
+            <!-- Entrada da quilometragem inicial (km) -->
+            <Label Text="Quilometragem inicial (km)" />
+            <Entry
+                x:Name="EntryQuilometragemInicial"
+                Placeholder="000"
+                Keyboard="Numeric"/>
+
+
+            <!-- Entrada da quilometragem final (km) -->
+            <Label Text="Quilometragem final (km)" />
+            <Entry
+                x:Name="EntryQuilometragemFinal"
+                Placeholder="000"
+                Keyboard="Numeric"/>
+
+            <!-- Entrada da quantidade de litros abastecidos (L) -->
+            <Label Text="Quantidade de litros abastecidos (L)" />
+            <Entry
+                x:Name="EntryLitrosAbastecidos"
+                Placeholder="00"
+                Keyboard="Numeric"/>
+
+            <!-- Entrada do consumo estimado do outro combustível (km/L) -->
+            <Label Text="Consumo estimado do outro combustível (km/L)" />
+            <Entry
+                x:Name="EntryConsumoEstimado"
+                Placeholder="0.00"
+                Keyboard="Numeric"/>
+
+            <!-- Picker para escolher o combustível -->
+            <Picker x:Name="PickerCombustivel" Title="Escolha o combustível que deseja calcular">
+                <Picker.Items>
+                    <x:String>Álcool</x:String>
+                    <x:String>Gasolina</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+            <!-- Botão para calcular -->
+            <Button
+                x:Name="ButtonCalcular"
+                Clicked="OnCalcularClicked"
+                Text="Calcular"/>
+
+            <!--RESULTADOS-->
+
+            <!--Consumo gasolina Km/L-->
+            <Label
+                x:Name="LabelResultadoConsumoGasolina"
+                Text=""
+                HorizontalOptions="Center"
+                />
+
+            <!--Consumo Alcool Km/L-->
+            <Label
+                x:Name="LabelResultadoConsumoAlcool"
+                Text=""
+                HorizontalOptions="Center"
+                />
+
+            <!--Custo Alcool R$/L-->
+            <Label
+                x:Name="LabelResultadoCustoAlcool"
+                Text=""
+                HorizontalOptions="Center"
+                />
+
+            <!--Custo Gasolina R$/L-->
+            <Label
+                x:Name="LabelResultadoCustoGasolina"
+                Text=""
+                HorizontalOptions="Center"
+                />
+
+            <!--Combustível recomendado-->
+            <Label
+                x:Name="LabelResultadoCombustivel"
+                Text=""
+                HorizontalOptions="Center"
+                />
+
+            <!--Regra dos 70%-->
+            <Label
+                x:Name="LabelResultadoRegrados70"
+                Text=""
+                HorizontalOptions="Center"
+                />
+            
+            
+            <Label
+    
+    Text=""
+    HorizontalOptions="Center"
+    />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
+    
+    
+    
