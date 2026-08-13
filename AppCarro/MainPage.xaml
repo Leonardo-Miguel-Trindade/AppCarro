@@ -21,14 +21,14 @@
                 Text="O melhor app para simular gastos de combustíveis!"
                 HorizontalOptions="Center" />
 
-            <!-- Entrada do preço do litro do Álcool (R$) -->
+            <!-- Entrada do preço do litro do álcool (R$) -->
             <Label Text="Preço do litro do Álcool (R$)"/>
             <Entry
                 x:Name="EntryPrecoAlcool"
                 Placeholder="0.00"
                 Keyboard="Numeric"/>
 
-            <!-- Entrada do preço do litro da Gasolina (R$) -->
+            <!-- Entrada do preço do litro da gasolina (R$) -->
             <Label Text="Preço do litro da Gasolina (R$)"/>
             <Entry
                 x:Name="EntryPrecoGasolina"
