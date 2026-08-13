@@ -121,7 +121,7 @@
             
             <Label
     
-    Text=""
+            Text=""
     HorizontalOptions="Center"
     />
 

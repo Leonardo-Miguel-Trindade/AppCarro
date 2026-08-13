@@ -112,13 +112,13 @@
                 //Verificação de qual combustível é mais custobenefício pela regra dos 70%
                 if (regrados70 <= 0.7)
                 {
-                    LabelResultadoRegrados70.Text = "Pela regra dos 70% é mais Custobenefício abastecer com Álcool.";
+                    LabelResultadoRegrados70.Text = "Pela regra dos 70% é mais Custo benefício abastecer com Álcool.";
                 }
                 else
                 {
-                    LabelResultadoRegrados70.Text = "Pela regra dos 70% é mais Custobenefício abastecer com Gasolina.";
+                    LabelResultadoRegrados70.Text = "Pela regra dos 70% é mais Custo benefício abastecer com Gasolina.";
                 }
             }
         }
-        }
+    }
 }
