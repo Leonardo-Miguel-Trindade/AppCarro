@@ -14,24 +14,29 @@
                 Text="Bem-vindo ao AppCarro!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
+                HorizontalOptions="Center" 
+                TextColor="MediumPurple"/>
+
+            <Label
+                Text="O melhor app para simular gastos de combustíveis!"
                 HorizontalOptions="Center" />
 
             <!-- Entrada do preço do litro do Álcool (R$) -->
-            <Label Text="Preço do litro do Álcool (R$)" />
+            <Label Text="Preço do litro do Álcool (R$)"/>
             <Entry
                 x:Name="EntryPrecoAlcool"
                 Placeholder="0.00"
                 Keyboard="Numeric"/>
 
             <!-- Entrada do preço do litro da Gasolina (R$) -->
-            <Label Text="Preço do litro da Gasolina (R$)" />
+            <Label Text="Preço do litro da Gasolina (R$)"/>
             <Entry
                 x:Name="EntryPrecoGasolina"
                 Placeholder="0.00"
                 Keyboard="Numeric"/>
 
             <!-- Entrada da quilometragem inicial (km) -->
-            <Label Text="Quilometragem inicial (km)" />
+            <Label Text="Quilometragem inicial (km)"/>
             <Entry
                 x:Name="EntryQuilometragemInicial"
                 Placeholder="000"
@@ -81,6 +86,7 @@
                 x:Name="LabelResultadoConsumoGasolina"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="MediumPurple"
                 />
 
             <!--Consumo Alcool Km/L-->
@@ -88,6 +94,7 @@
                 x:Name="LabelResultadoConsumoAlcool"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="MediumPurple"
                 />
 
             <!--Custo Alcool R$/L-->
@@ -95,6 +102,7 @@
                 x:Name="LabelResultadoCustoAlcool"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="Red"
                 />
 
             <!--Custo Gasolina R$/L-->
@@ -102,6 +110,7 @@
                 x:Name="LabelResultadoCustoGasolina"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="Red"
                 />
 
             <!--Combustível recomendado-->
@@ -109,6 +118,7 @@
                 x:Name="LabelResultadoCombustivel"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="Green"
                 />
 
             <!--Regra dos 70%-->
@@ -116,6 +126,7 @@
                 x:Name="LabelResultadoRegrados70"
                 Text=""
                 HorizontalOptions="Center"
+                TextColor="Green"
                 />
             
             
