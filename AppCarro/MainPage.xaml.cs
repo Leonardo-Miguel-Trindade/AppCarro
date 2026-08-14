@@ -118,7 +118,29 @@
                 {
                     LabelResultadoRegrados70.Text = "Pela regra dos 70% é mais Custo benefício abastecer com Gasolina.";
                 }
+                Buttonlimpar.IsVisible = true;
             }
+        }
+
+        private void OnCalcularLimpar(object sender, EventArgs e)
+        {
+            EntryPrecoAlcool.Text = "";
+            EntryPrecoGasolina.Text = "";
+            EntryPrecoAlcool.Text = "";
+            EntryPrecoGasolina.Text = "";
+            EntryQuilometragemInicial.Text = "";
+            EntryQuilometragemFinal.Text = "";
+            EntryConsumoEstimado.Text = "";
+            EntryLitrosAbastecidos.Text = "";
+            PickerCombustivel.SelectedItem = null;
+            Buttonlimpar.IsVisible = false;
+            LabelResultadoCombustivel.Text = "";
+            LabelResultadoConsumoAlcool.Text = "";
+            LabelResultadoConsumoGasolina.Text = "";
+            LabelResultadoCustoAlcool.Text = "";
+            LabelResultadoCustoGasolina.Text = "";
+            LabelResultadoRegrados70.Text = "";
+
         }
     }
 }

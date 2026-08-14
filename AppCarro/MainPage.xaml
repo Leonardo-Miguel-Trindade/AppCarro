@@ -11,7 +11,7 @@
 
             <!-- Título do aplicativo -->
             <Label
-                Text="Bem-vindo ao AppCarro!"
+                Text="Bem-vindo"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" 
@@ -72,12 +72,27 @@
                 </Picker.Items>
             </Picker>
 
-
-            <!-- Botão para calcular -->
-            <Button
+            <HorizontalStackLayout
+                Padding="30,0"
+                Spacing="25"
+                HorizontalOptions="Center"
+                >
+                <!-- Botão para calcular -->
+                <Button
                 x:Name="ButtonCalcular"
                 Clicked="OnCalcularClicked"
                 Text="Calcular"/>
+
+                <!-- Botão para limpar -->
+                <Button
+                x:Name="Buttonlimpar"
+                Clicked="OnCalcularLimpar"
+                Text="Limpar"
+                IsVisible="False"/>
+                
+            </HorizontalStackLayout>
+                
+            
 
             <!--RESULTADOS-->
 
@@ -131,7 +146,6 @@
             
             
             <Label
-    
             Text=""
     HorizontalOptions="Center"
     />
