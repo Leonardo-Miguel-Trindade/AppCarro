@@ -25,6 +25,11 @@
                 DisplayAlert("Erro", "Por favor, insira valores válidos em todos os campos.", "OK");
 
             }
+            //Verificação se os valores estiverem == 0
+            else if (precoAlcool == 0 || precoGasolina ==0 || quilometragemFinal == 0 || consumoEstimado == 0)
+            {
+                DisplayAlert("Erro", "Por favor, insira valores válidos em todos os campos", "OK");
+            }
             //Verificação se a quilometragem final é menor que a inicial (Se não quebraria toda a lógica do sistema)
             else if (quilometragemFinal < quilometragemInicial)
             {
