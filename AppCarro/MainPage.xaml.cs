@@ -17,16 +17,15 @@
             bool quilometragemInicialTry = double.TryParse(EntryQuilometragemInicial.Text, out double quilometragemInicial);
             bool quilometragemFinalTry = double.TryParse(EntryQuilometragemFinal.Text, out double quilometragemFinal);
             bool litrosAbastecidosTry = double.TryParse(EntryLitrosAbastecidos.Text, out double litrosAbastecidos);
-            bool consumoEstimadoTry = double.TryParse(EntryConsumoEstimado.Text, out double consumoEstimado);
 
             //Verificação se todos os campos foram preenchidos
-            if (!precoAlcoolTry || !precoGasolinaTry || !quilometragemInicialTry || !quilometragemFinalTry || !litrosAbastecidosTry || !consumoEstimadoTry || PickerCombustivel.SelectedItem is not string combustivelSelecionado)
+            if (!precoAlcoolTry || !precoGasolinaTry || !quilometragemInicialTry || !quilometragemFinalTry || !litrosAbastecidosTry)
             {
                 DisplayAlert("Erro", "Por favor, insira valores válidos em todos os campos.", "OK");
 
             }
             //Verificação se os valores estiverem == 0
-            else if (precoAlcool == 0 || precoGasolina ==0 || quilometragemFinal == 0 || consumoEstimado == 0)
+            else if (precoAlcool == 0 || precoGasolina ==0 || quilometragemFinal == 0)
             {
                 DisplayAlert("Erro", "Por favor, insira valores válidos em todos os campos", "OK");
             }
@@ -57,53 +56,21 @@
                 double regrados70 = precoAlcool / precoGasolina;
 
                 //Declaração das variáveis de consumo e custo
-                double consumoAlcool;
-                double consumoGasolina;
+                double consumoMedio = distanciapercorrida/litrosAbastecidos;
                 double custoAlcool;
                 double custoGasolina;
 
-                //Verificação do combustível selecionado
-                if (combustivelSelecionado == "Álcool")
-                {
-                    //Calculo do consumo e custo do álcool
-                    consumoAlcool = distanciapercorrida / litrosAbastecidos;
+           
+                //Consumo e custo por km do álcool e gasolina
+                custoAlcool = precoAlcool / consumoMedio;
+                custoGasolina = precoGasolina / consumoMedio;
 
-                    //Atrubuição do consumo estimado da gasolina (Valor estimado pelo usuário)
-                    consumoGasolina = consumoEstimado;
-
-                    //Consumo e custo por km do álcool e gasolina
-                    custoAlcool = precoAlcool / consumoAlcool;
-                    custoGasolina = precoGasolina / consumoGasolina;
-
-                    //Exibição dos resultados na tela
-                    LabelResultadoConsumoAlcool.Text = "Consumo Alcool: " + consumoAlcool.ToString("F2") + " km/l";
-                    LabelResultadoConsumoGasolina.Text = "Consumo Gasolina: " + consumoGasolina.ToString("F2") + "km/l";
-                    LabelResultadoCustoAlcool.Text = "Custo Alcool: " + custoAlcool.ToString("F2") + " R$/km";
-                    LabelResultadoCustoGasolina.Text = "Custo Gasolina: " + custoGasolina.ToString("F2") + " R$/km";
-                }
-                //Se o combustível selecionado for gasolina
-                else
-                {
-                    //Cálculo do consumo da gasolina
-                    consumoGasolina = distanciapercorrida / litrosAbastecidos;
-
-                    //Atribuição do consumo estimado do álcool (Valor estimado pelo usuário)
-                    consumoAlcool = consumoEstimado;
-
-                    //Cálculo do custo por km do álcool
-                    custoAlcool = precoAlcool / consumoAlcool;
-
-                    //Cálculo do custo por km da gasolina
-                    custoGasolina = precoGasolina / consumoGasolina;
-
-                    //Exibição dos resultados na tela
-                    LabelResultadoConsumoAlcool.Text = "Consumo Alcool: " + consumoAlcool.ToString("F2") + " km/l";
-                    LabelResultadoConsumoGasolina.Text = "Consumo Gasolina: " + consumoGasolina.ToString("F2") + " km/l";
-                    LabelResultadoCustoAlcool.Text = "Custo Alcool: " + custoAlcool.ToString("F2") + " R$/km";
-                    LabelResultadoCustoGasolina.Text = "Custo Gasolina: " + custoGasolina.ToString("F2") + " R$/km";
-                }
-
-
+                //Exibição dos resultados na tela
+                LabelResultadoConsumo.Text = "Consumo: " + consumoMedio.ToString("F2") + " km/l";
+                LabelResultadoCustoAlcool.Text = "Custo Alcool: " + custoAlcool.ToString("F2") + " R$/km";
+                LabelResultadoCustoGasolina.Text = "Custo Gasolina: " + custoGasolina.ToString("F2") + " R$/km";
+               
+                
                 //Verificação de qual combustível é mais custobenefício
                 if (custoAlcool <= custoGasolina)
                 {
@@ -135,13 +102,10 @@
             EntryPrecoGasolina.Text = "";
             EntryQuilometragemInicial.Text = "";
             EntryQuilometragemFinal.Text = "";
-            EntryConsumoEstimado.Text = "";
             EntryLitrosAbastecidos.Text = "";
-            PickerCombustivel.SelectedItem = null;
             Buttonlimpar.IsVisible = false;
             LabelResultadoCombustivel.Text = "";
-            LabelResultadoConsumoAlcool.Text = "";
-            LabelResultadoConsumoGasolina.Text = "";
+            LabelResultadoConsumo.Text = "";
             LabelResultadoCustoAlcool.Text = "";
             LabelResultadoCustoGasolina.Text = "";
             LabelResultadoRegrados70.Text = "";

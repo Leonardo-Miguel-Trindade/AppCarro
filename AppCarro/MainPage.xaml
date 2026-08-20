@@ -57,20 +57,6 @@
                 Placeholder="00"
                 Keyboard="Numeric"/>
 
-            <!-- Entrada do consumo estimado do outro combustível (km/L) -->
-            <Label Text="Consumo estimado do outro combustível (km/L)" />
-            <Entry
-                x:Name="EntryConsumoEstimado"
-                Placeholder="0.00"
-                Keyboard="Numeric"/>
-
-            <!-- Picker para escolher o combustível -->
-            <Picker x:Name="PickerCombustivel" Title="Escolha o combustível que deseja calcular">
-                <Picker.Items>
-                    <x:String>Álcool</x:String>
-                    <x:String>Gasolina</x:String>
-                </Picker.Items>
-            </Picker>
 
             <HorizontalStackLayout
                 Padding="30,0"
@@ -96,17 +82,9 @@
 
             <!--RESULTADOS-->
 
-            <!--Consumo gasolina Km/L-->
+            <!--Consumo-->
             <Label
-                x:Name="LabelResultadoConsumoGasolina"
-                Text=""
-                HorizontalOptions="Center"
-                TextColor="MediumPurple"
-                />
-
-            <!--Consumo Alcool Km/L-->
-            <Label
-                x:Name="LabelResultadoConsumoAlcool"
+                x:Name="LabelResultadoConsumo"
                 Text=""
                 HorizontalOptions="Center"
                 TextColor="MediumPurple"
